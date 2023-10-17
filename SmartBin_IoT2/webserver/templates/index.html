@@ -1,0 +1,40 @@
+<!DOCTYPE html>                           
+    <html lang="en">                      
+    <head>                                  
+        <meta charset="UTF-8">              
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> 
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="../static/styles.css"> 
+        <title>IoT2 - Gruppe 2A</title>    
+    </head>
+    <body>                                
+        <!--=============== DASHBOARD ===============-->
+        <section class="container">        
+            <div class="container__card">  
+                <div class="container__data"> 
+                    <p class="container__text">Container</p> 
+                    <h1 class="container__percentage">
+                        {{ percentage }} %      
+                    </h1>
+
+                    <p class="container__status">
+                        Tom container <i class="ri-delete-bin-2-line animated-red"></i> 
+                    </p>
+                </div>
+                <div class="container__icon"> 
+                    <div class="container__level"> 
+                        <div class="container__liquid"></div> 
+                    </div>
+                </div>
+        </section>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="../static/main.js"></script> 
+        <script type="text/javascript">
+            var percentageData = {{ percentage }}; 
+            </script>
+            </html>                 
+    </body>
+

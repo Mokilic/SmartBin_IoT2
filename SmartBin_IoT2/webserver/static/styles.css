@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap"); 
+
+:root {
+
+  --gradient-color-red: linear-gradient(90deg, 
+                          hsl(7, 89%, 46%) 15%,
+                          hsl(11, 93%, 68%) 100%);
+  --gradient-color-orange: linear-gradient(90deg, 
+                           hsl(22, 89%, 46%) 15%,
+                           hsl(54, 90%, 45%) 100%);
+  --gradient-color-yellow: linear-gradient(90deg, 
+                           hsl(54, 89%, 46%) 15%,
+                           hsl(92, 90%, 45%) 100%);
+  --gradient-color-green: linear-gradient(90deg, 
+                          hsl(92, 89%, 46%) 15%,
+                          hsl(92, 90%, 68%) 100%);
+  --text-color: #fff;
+  --body-color: hsl(0, 0%, 11%);
+  --container-color: hsl(0, 0%, 9%);
+
+  --body-font: 'Rubik', sans-serif;
+
+  --biggest-font-size: 2.5rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 2.75rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+            
+/*=============== BASE ===============*/
+* {                       
+  box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font); 
+  font-size: var(--normal-font-size); 
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+/*=============== DASHBOARD ===============*/
+.container{       
+  height: 40vh;   
+  display: grid;   
+  place-items: center; 
+  margin: 0 1.5rem;         
+}
+
+.container__card{
+  position: relative; 
+  width: 50%; 
+  height: 240px; 
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem; 
+  border-radius: 1.5rem; 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center; 
+}
+
+.container__text{
+  margin-bottom: .5rem; 
+}
+
+.container__percentage{
+  font-size: var(--biggest-font-size);
+}
+
+.container__status{
+  position: absolute; 
+  bottom: 1.5rem; 
+  display: flex; 
+  align-items: center; 
+  column-gap: .5rem; 
+  font-size: var(--smaller-font-size); 
+}
+
+.container__status{
+  font-size: 1.25rem;
+}
+
+.container__icon{
+  position: relative; 
+  width: 75px; 
+  height: 180px; 
+  margin-top: 25px; 
+  background-color: var(--container-color); 
+  box-shadow: inset 20px 0 48px hsl(0, 0%, 16%), 
+              inset -4px 12px 48px hsl(0, 0%, 56%);
+  transform: perspective(150px) rotateX(-20deg);
+  justify-self: flex-end; 
+  }
+
+.container__level{
+  position: absolute;
+  inset: 2px; 
+  overflow: hidden; 
+}
+
+.container__liquid{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--gradient-color-red);
+  box-shadow: inset -10px 0 12px hsla(0, 0%, 0%, .1),
+              inset -10px 0 12px hsla(0, 0%, 0%, .15);
+  transition: .3s;
+}
+
+.green-color{
+  background: var(--gradient-color-green);
+}
+
+.animated-yellow{
+  background: var(--gradient-color-yellow);
+  animation: animated-chargin-battery 1.2s infinite alternate; 
+}
+
+.animated-orange{
+  background: var(--gradient-color-orange);
+  animation: animated-low-battery 1.2s infinite alternate;
+}
+
+.animated-green{
+  background: var(--gradient-color-green);
+  animation: animated-chargin-battery 1.2s infinite alternate;
+}
+
+.animated-red{
+  background: var(--gradient-color-red);
+  animation: animated-low-battery 1.2s infinite alternate;
+}
+
+.animated-green,
+.animated-yellow,
+.animated-orange,
+.animated-red,
+.green-color{
+background-clip: text;
+ -webkit-background-clip: text; 
+color: transparent;
+}
+
+@keyframes animated-chargin-battery{
+  0%{
+    text-shadow: none;
+  }
+  100%{
+    text-shadow: 0 0 6px hsl(92, 90%, 68%)
+  }
+}
+
+@keyframes animated-low-battery{
+  0%{
+    text-shadow: none;
+  }
+  100%{
+    text-shadow: 0 0 8px hsl(7, 89%, 46%);
+  }
+}
+
+.gradient-color-red, 
+.gradient-color-red::after{
+  background: var(--gradient-color-red);
+}
+
+.gradient-color-orange,
+.gradient-color-orange::after{
+  background: var(--gradient-color-orange);
+}
+
+.gradient-color-yellow, 
+.gradient-color-yellow::after{
+  background: var(--gradient-color-yellow);
+}
+
+.gradient-color-green, 
+.gradient-color-green::after{
+  background: var(--gradient-color-green);
+}
